@@ -2,7 +2,7 @@ module ShapefilePlots
 
 using RecipesBase
 using Shapefile
-import Plots
+using Plots
 
 include("plotshp.jl")
 
