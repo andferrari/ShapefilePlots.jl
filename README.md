@@ -14,7 +14,7 @@ using Shapefile
 using ShapefilePlots
 
 # shapefile from https://fr.actualitix.com/
-test_file = joinpath(dirname(dirname(pathof(Shapefile))),"test/test.shp")
+test_file = joinpath(dirname(dirname(pathof(ShapefilePlots))),"test/test.shp")
 
 shp = open(test_file) do fd
     read(fd,Shapefile.Handle)
