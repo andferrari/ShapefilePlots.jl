@@ -1,20 +1,9 @@
 function polygon2shape(polygon::Shapefile.Polygon{Float64})
-    x =  zeros(length(polygon.points))
-    y = similar(x)
-    for ip in 1:length(polygon.points)
-        x[ip] = polygon.points[ip].x
-        y[ip] = polygon.points[ip].y
-    end
-    Shape(x,y)
+    Plots.Shape([pt.x for pt=polygon.points], [pt.y for pt in polygon.points])
 end
 
 function shapefile2shapes(shapefile::Shapefile.Handle{Shapefile.Polygon{Float64}})
-    n_shapes = length(shapefile.shapes)
-    all_shapes = Vector{Shape}(undef, n_shapes)
-    for n in 1:n_shapes
-        all_shapes[n] = polygon2shape(shapefile.shapes[n])
-    end
-    all_shapes
+    [polygon2shape(polygon) for polygon in shapefile.shapes]
 end
 
 @recipe function f(shapefile::Shapefile.Handle{Shapefile.Polygon{Float64}}, val_fill::Vector)
