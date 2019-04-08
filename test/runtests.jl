@@ -7,4 +7,4 @@ shp = open("test/test.shp") do fd
     read(fd,Shapefile.Handle)
 end
 
-plot(shp, rand(length(shp.shapes)))
+plot(shp, rand(shp.length))

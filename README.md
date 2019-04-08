@@ -5,7 +5,7 @@ using ShapefilePlots
 shp = open("test.shp") do fd
     read(fd,Shapefile.Handle)
 end
-plot(shp, rand(length(shp.shapes)))
+plot(shp, rand(shp.length))
 ```
 
 ![](https://www-n.oca.eu/aferrari/data/test.png)
