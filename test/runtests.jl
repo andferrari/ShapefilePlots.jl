@@ -3,7 +3,7 @@ using Shapefile
 using ShapefilePlots
 
 # shapefile from https://fr.actualitix.com/
-shp = open("test/test.shp") do fd
+shp = open("test.shp") do fd
     read(fd,Shapefile.Handle)
 end
 
