@@ -1,12 +1,12 @@
 A simple [Plots.jl](https://github.com/JuliaPlots/Plots.jl) recipe to plot maps from .shp files using  [Shapefile.jl](https://github.com/JuliaGeo/Shapefile.jl) with colors.
 
-#Install
+# Install
 
 ```julia
 (v1.1) pkg> add https://github.com/andferrari/ShapefilePlots.jl.git
 ```
 
-#Demo
+# Demo
 
 ```julia
 using Plots
@@ -21,5 +21,5 @@ shp = open(test_file) do fd
 end
 plot(shp, rand(shp.length))
 ```
-should give:
+
 ![](https://www-n.oca.eu/aferrari/data/test.png)
